@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubeen Saleem - Amazon Ecommerce Strategist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            top: -50%;
+            left: -50%;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: #ffffff;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ff6b35;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b35;
+            display: block;
+        }
+
+        .stat-label {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff, #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff6b35;
+        }
+
+        .about-text p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid #ff6b35;
+        }
+
+        .achievement-item i {
+            color: #ff6b35;
+            font-size: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff6b35;
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #cccccc;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff6b35;
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .team-card h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card p {
+            color: #ff6b35;
+            font-weight: 500;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            z-index: 1;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .process-step h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: #cccccc;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.1);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .tool-item h4 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-item p {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .client-info h4 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .client-info p {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: #ff6b35;
+        }
+
+        .testimonial-text {
+            color: #cccccc;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .result-highlight {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: #ffffff;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        .faq-question:hover {
+            color: #ff6b35;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: #ff6b35;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: #ff6b35;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 107, 53, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-item i {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        .contact-item div h4 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item div p {
+            color: #cccccc;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b35;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b35;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #ff6b35;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+            color: #cccccc;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MUBEEN SALEEM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#testimonials">Results</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="subtitle">ECOMMERCE STRATEGIST</div>
+                <h1>Scale Your Amazon Business</h1>
+                <p>Top-rated on Fiverr and Upwork, dedicated to helping Amazon sellers scale their businesses with proven strategies in wholesale and online arbitrage. With years of hands-on experience and a track record of success.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Get Free Consultation
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-chart-line"></i> View Services
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="500">0</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="2.5">0</span>
+                        <span class="stat-label">Million $ Generated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="98">0</span>
+                        <span class="stat-label">Success Rate %</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Transforming Amazon businesses with data-driven strategies and proven expertise in wholesale and online arbitrage.</p>
+            </div>
+
+            <div class="about-content animate-on-scroll">
+                <div class="about-image">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #ff6b35, #f7931e); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; font-weight: bold;">MS</div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Your Amazon Success Partner</h3>
+                    <p>With years of hands-on experience in Amazon selling, I've helped hundreds of clients transform their businesses from struggling startups to profitable enterprises. My expertise spans across wholesale sourcing, online arbitrage, and strategic business development.</p>
+                    
+                    <p>As the owner of a successful agency, I understand the challenges faced by Amazon sellers. My team and I have generated millions in revenue for our clients while working within modest budgets to maximize profitability.</p>
+
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <strong>Top Rated Professional</strong>
+                                <p>5-star rating on both Fiverr & Upwork</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Agency Owner</strong>
+                                <p>Leading a team of 4+ specialists</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div>
+                                <strong>Proven Results</strong>
+                                <p>$2.5M+ generated for clients</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>100% Commitment</strong>
+                                <p>Dedicated to your success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Our Core Expertise</h2>
+                <p class="section-subtitle">Comprehensive Amazon selling solutions designed to maximize your profitability and scale your business efficiently.</p>
+            </div>
+
+            <div class="services-grid animate-on-scroll">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Online Arbitrage</h3>
+                    <p>Find profitable products from online retailers and sell them on Amazon for maximum profit margins.</p>
+                    <ul class="service-features">
+                        <li>Profitable product sourcing</li>
+                        <li>ROI analysis & calculations</li>
+                        <li>Competitive pricing strategies</li>
+                        <li>Market trend analysis</li>
+                        <li>Risk assessment & mitigation</li>
+                        <li>Inventory turnover optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Wholesale Sourcing</h3>
+                    <p>Establish direct relationships with manufacturers and distributors for consistent, scalable revenue streams.</p>
+                    <ul class="service-features">
+                        <li>Brand approval assistance</li>
+                        <li>Supplier relationship building</li>
+                        <li>Wholesale lead generation</li>
+                        <li>Negotiation support</li>
+                        <li>Catalog analysis</li>
+                        <li>Long-term partnership development</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Product Research</h3>
+                    <p>In-depth market analysis to identify winning products with high profit potential and low competition.</p>
+                    <ul class="service-features">
+                        <li>Market opportunity analysis</li>
+                        <li>Competition assessment</li>
+                        <li>Profit margin calculations</li>
+                        <li>Demand forecasting</li>
+                        <li>Seasonal trend identification</li>
+                        <li>Risk evaluation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Account Management</h3>
+                    <p>Complete Seller Central management to optimize your Amazon presence and maximize sales performance.</p>
+                    <ul class="service-features">
+                        <li>Listing optimization</li>
+                        <li>Inventory management</li>
+                        <li>Performance monitoring</li>
+                        <li>Customer service support</li>
+                        <li>Account health maintenance</li>
+                        <li>Sales analytics & reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Meet The Team</h2>
+                <p class="section-subtitle">Behind every success is a dedicated team. I'm proud to work alongside these skilled professionals who bring expertise and passion to every project.</p>
+            </div>
+
+            <div class="team-grid animate-on-scroll">
+                <div class="team-card">
+                    <div class="team-avatar">MS</div>
+                    <h3>Mubeen Saleem</h3>
+                    <p>Founder & Strategist</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">MU</div>
+                    <h3>M. Umair</h3>
+                    <p>Product Research UK</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">BS</div>
+                    <h3>Bilal Saleem</h3>
+                    <p>Product Research US</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">AS</div>
+                    <h3>Arsalan Shoukat</h3>
+                    <p>Brand Approvals</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">UA</div>
+                    <h3>Uzma Ashraf</h3>
+                    <p>Seller Central Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Our 4-Step Success Process</h2>
+                <p class="section-subtitle">A proven methodology that has generated millions in revenue for our clients across different Amazon marketplaces.</p>
+            </div>
+
+            <div class="process-steps animate-on-scroll">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Research & Analysis</h3>
+                    <p>Deep market analysis using premium tools like Keepa and SellerAmp to identify profitable opportunities with minimal risk.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Strategic Sourcing</h3>
+                    <p>Leverage our established supplier network and negotiation expertise to secure the best products at optimal prices.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Optimization & Launch</h3>
+                    <p>Implement proven listing strategies, competitive pricing, and inventory management to maximize your product performance.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Scale & Monitor</h3>
+                    <p>Continuous monitoring, performance optimization, and strategic scaling to ensure sustained growth and profitability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Premium Tools & Software</h2>
+                <p class="section-subtitle">We use industry-leading tools and software to ensure accurate analysis, efficient sourcing, and maximum profitability for your business.</p>
+            </div>
+
+            <div class="tools-grid animate-on-scroll">
+                <div class="tool-item">
+                    <div class="tool-icon">📊</div>
+                    <h4>Keepa</h4>
+                    <p>Price history & sales rank tracking</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">⚡</div>
+                    <h4>SellerAmp</h4>
+                    <p>Real-time profit calculations</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">🔍</div>
+                    <h4>Helium 10</h4>
+                    <p>Product research & optimization</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">📈</div>
+                    <h4>Jungle Scout</h4>
+                    <p>Market intelligence & analytics</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">🛒</div>
+                    <h4>RevSeller</h4>
+                    <p>Online arbitrage sourcing</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">💰</div>
+                    <h4>Tactical Arbitrage</h4>
+                    <p>Automated product scanning</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">📋</div>
+                    <h4>InventoryLab</h4>
+                    <p>Inventory & profit management</p>
+                </div>
+
+                <div class="tool-item">
+                    <div class="tool-icon">🎯</div>
+                    <h4>AMZScout</h4>
+                    <p>Product validation & tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">Real results from real clients. See how our strategies have transformed Amazon businesses and generated substantial profits.</p>
+            </div>
+
+            <div class="testimonials-grid animate-on-scroll">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Online Arbitrage Client</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"At first, I was anxious about investing my savings in a new product line. Mubeen's guidance and proven strategies gave me confidence. The results speak for themselves!"</p>
+                    <div class="result-highlight">
+                        $1,192 Revenue | $245 Net Profit in First Month
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <h4>Mike Chen</h4>
+                            <p>Wholesale Client</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Combined fast-selling Online Arbitrage with high-value Wholesale deals. The execution was flawless and the results exceeded all expectations!"</p>
+                    <div class="result-highlight">
+                        $21,000 Revenue | $2,537 Net Profit in 13 Days
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <h4>Amazon Success Story</h4>
+                            <p>Monthly Performance</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Consistent growth and profitability. Our partnership with Mubeen has transformed our Amazon business into a reliable revenue stream."</p>
+                    <div class="result-highlight">
+                        $50.09K Monthly Sales | 48% Growth | 202% YoY
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="client-info">
+                            <h4>Wholesale Success</h4>
+                            <p>Brand Partnership</p>
+                        </div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Struggled with brand approvals until Mubeen's team provided comprehensive support. Now we have successful partnerships with multiple brands."</p>
+                    <div class="result-highlight">
+                        1,400 Units Monthly | $8,400 Profit | 40% ROI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Get answers to common questions about our services, processes, and what you can expect when working with us.</p>
+            </div>
+
+            <div class="faq-container animate-on-scroll">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's the minimum investment needed to start?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work with clients across different budget ranges. For online arbitrage, you can start with as little as $500-$1000. For wholesale, we recommend starting with $2000-$5000 to take advantage of better pricing and bulk opportunities. We'll work within your budget to maximize profitability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long does it take to see results?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Results vary depending on the strategy and investment level. With online arbitrage, clients typically see their first sales within 2-4 weeks. Wholesale relationships take 4-8 weeks to establish but provide more consistent long-term revenue. Our fastest client generated $2,537 profit in just 13 days!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you provide ongoing support after setup?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We provide comprehensive ongoing support including performance monitoring, inventory management assistance, new product recommendations, and strategic guidance. Our goal is your long-term success, not just a one-time setup.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What makes your approach different?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our data-driven approach uses premium tools like Keepa and SellerAmp for accurate analysis. We have established supplier relationships, proven brand approval processes, and a dedicated team of specialists. Plus, we work within your budget to maximize ROI rather than pushing expensive packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can you help with brand approvals?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Brand approvals are one of our specialties. Arsalan Shoukat on our team specializes in this area and has successfully helped numerous clients get approved for restricted brands. We provide comprehensive support throughout the entire approval process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you work with international clients?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we work with clients globally! We have experience with Amazon US, UK, and other marketplaces. Our team includes specialists for different regions - M. Umair focuses on UK market research while Bilal Saleem specializes in US market analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Ready to Scale Your Amazon Business?</h2>
+                <p class="section-subtitle">Get in touch for a FREE consultation and discover how we can help you achieve your Amazon selling goals.</p>
+            </div>
+
+            <div class="contact-content animate-on-scroll">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+92 329 6071570</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>projectsecommerceamz@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p>Within 2 hours (business days)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-gift"></i>
+                        <div>
+                            <h4>Free Consultation</h4>
+                            <p>30-minute strategy session</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="color: #ff6b35; margin-bottom: 1.5rem;">Send Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="business">Business Type</label>
+                            <input type="text" id="business" name="business" placeholder="Online Arbitrage, Wholesale, New Seller, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your Amazon selling goals and current challenges..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mubeen Saleem</h3>
+                    <p>Top-rated Amazon Ecommerce Strategist helping sellers scale their businesses with proven wholesale and online arbitrage strategies.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <p><a href="#services">Online Arbitrage</a></p>
+                    <p><a href="#services">Wholesale Sourcing</a></p>
+                    <p><a href="#services">Product Research</a></p>
+                    <p><a href="#services">Account Management</a></p>
+                    <p><a href="#services">Brand Approvals</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#about">About Me</a></p>
+                    <p><a href="#team">Our Team</a></p>
+                    <p><a href="#testimonials">Success Stories</a></p>
+                    <p><a href="#faq">FAQ</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fab fa-whatsapp"></i> +92 329 6071570</p>
+                    <p><i class="fas fa-envelope"></i> projectsecommerceamz@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Available 24/7</p>
+                    <p><i class="fas fa-star"></i> Top Rated on Fiverr & Upwork</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mubeen Saleem. All rights reserved. | Amazon Ecommerce Strategist | Wholesale & Online Arbitrage Expert</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-count'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (target > 1) {
+                            counter.textContent = Math.floor(current);
+                        } else {
+                            counter.textContent = current.toFixed(1);
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        if (target > 1) {
+                            counter.textContent = target;
+                        } else {
+                            counter.textContent = target.toFixed(1);
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // Start counter animation on page load
+        window.addEventListener('load', () => {
+            setTimeout(animateCounters, 1000);
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = question.querySelector('.faq-icon');
+                
+                // Toggle active class
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (answer.classList.contains('active')) {
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+                
+                // Close other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('.faq-answer').classList.remove('active');
+                        item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const business = formData.get('business');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hi Mubeen,
+
+Name: ${name}
+Email: ${email}
+Business Type: ${business}
+
+Message: ${message}
+
+I'm interested in your Amazon services and would like to schedule a consultation.`;
+            
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/923296071570?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            e.target.reset();
+            
+            // Show success message
+            alert('Message prepared! WhatsApp will open shortly.');
+        });
+    </script>
+</body>
+</html>
